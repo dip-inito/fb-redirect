@@ -16,18 +16,23 @@
   <h2>Opening Facebook...</h2>
   <p>If nothing happens, <a href="https://www.facebook.com/groups/initofertility/">click here</a>.</p>
 
-  <script>
-    const fbAppUrl = "https://www.facebook.com/share/g/1Hb2kbmoA6/?mibextid=wwXIfr";
-    // const fbWebUrl = "https://www.facebook.com/groups/initofertility/";
-    const fbAppUrl = "fb://group/1363251160841458";
+<script>
+  const fbAppUrl = "fb://group/1363251160841458";
+  const fbWebUrl = "https://www.facebook.com/groups/initofertility/";
 
-    // Try to open the Facebook app
-    window.location.href = fbAppUrl;
+  // Try app deep link
+  const deepLink = document.createElement("a");
+  deepLink.href = fbAppUrl;
+  deepLink.style.display = "none";
+  document.body.appendChild(deepLink);
+  deepLink.click();
 
-    // Fallback to browser version after 500ms
-    setTimeout(() => {
-      window.location.href = fbWebUrl;
-    }, 500);
-  </script>
+  // Fallback to web version after delay
+  setTimeout(() => {
+    window.location.replace(fbWebUrl);
+  }, 500);
+</script>
+
+  
 </body>
 </html>
