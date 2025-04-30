@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting to Facebook Group...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Opening Facebook...</h2>
+  <p>If nothing happens, <a href="https://www.facebook.com/groups/initofertility/">click here</a>.</p>
+
+  <script>
+    const fbAppUrl = "fb://group/221443117200099";
+    const fbWebUrl = "https://www.facebook.com/groups/initofertility/";
+
+    // Try to open the Facebook app
+    window.location.href = fbAppUrl;
+
+    // Fallback to browser version after 500ms
+    setTimeout(() => {
+      window.location.href = fbWebUrl;
+    }, 500);
+  </script>
+</body>
+</html>
